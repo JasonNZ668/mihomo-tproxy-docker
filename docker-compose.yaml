@@ -11,8 +11,8 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      homenet:
-        ipv4_address: 192.168.2.2 # container (gateway) ip address
+      mihomovlan:
+        ipv4_address: 192.168.88.2 # container (gateway) ip address
     environment:
       QUIC: "false" # allow quic (udp 443)
       CONTAINER_PROXY: "false" # forward the container's own traffic to tproxy
@@ -29,9 +29,9 @@ networks:
       parent: eth0 # modify it to match your network interface name
     ipam:
       config: # modify the following content to match your network env
-        - subnet: "192.168.2.0/24"
-          ip_range: "192.168.2.64/26"
-          gateway: "192.168.2.1"
+        - subnet: "192.168.88.0/24"
+          ip_range: "192.168.88.0/24"
+          gateway: "192.168.88.1"
 
 # if you already have a macvlan
 # networks:
