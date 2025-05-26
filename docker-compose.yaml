@@ -10,14 +10,15 @@ services:
       - NET_ADMIN
     networks:
       mihomovlan: # macvlan name
-        ipv4_address: 192.168.2.2 # container (gateway) ip address
+        ipv4_address: 192.168.88.7 # container (gateway) ip address
     environment:
       QUIC: "false" # allow quic (udp 443)
       CONTAINER_PROXY: "false" # forward the container's own traffic to tproxy
       SKIP_CNIP: "false" # bypass forwarding cn ip to the mihomo kernel (only valid for redir-host mode)
     volumes:
       - './config.yaml:/mihomo/config/config.yaml'
-      - './cn_cidr.txt:/mihomo/config/cn_cidr.txt'
+      - './cn.cidr:/mihomo/config/cn_cidr.txt'
+      - './cn_ipv6.cidr:/mihomo/config/cn_ipv6cidr.txt'
 
 networks:
   mihomovlan:
@@ -27,9 +28,9 @@ networks:
       parent: eth0 # modify it to match your network interface name
     ipam:
       config: # modify the following content to match your network env
-        - subnet: "192.168.2.0/24"
-          ip_range: "192.168.2.64/26"
-          gateway: "192.168.2.1"
+        - subnet: "192.168.88.0/24"
+          ip_range: "192.168.88.1/24"
+          gateway: "192.168.88.1"
 
 # if you already have a macvlan
 # networks:
