@@ -12,8 +12,8 @@ iptables:
   enable: false
 routing-mark: 255
 external-ui: ui
-external-controller: 0.0.0.0:9090
-# secret: ""
+external-controller: 192.168.88.7:19797
+secret: "8955662233"
 mode: rule
 log-level: info
 ipv6: false
