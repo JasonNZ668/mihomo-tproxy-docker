@@ -26,8 +26,12 @@ use-hosts: true
 hosts:
   'localhost': 127.0.0.1
 geox-url:
-  geosite: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite-lite.dat
-  geoip: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat
+  # geosite: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite-lite.dat
+  # geoip: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat
+  geosite: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  geoip: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+
+
 geodata-mode: true
 geo-auto-update: true
 geo-update-interval: 72
@@ -42,7 +46,7 @@ dns:
   #   - '*.lan'
   #   - localhost.ptlogin2.qq.com
   default-nameserver:
-    - 223.6.6.6
+    - 223.5.5.5
     - 119.29.29.29
   nameserver: # Default DNS for non-CN websites, use unpolluted DNS for redir-host mode.
     - https://dns.alidns.com/dns-query
